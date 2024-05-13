@@ -1,0 +1,38 @@
+<!-- this is the home template, what user see after login and submitting the right code -->
+
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'authentication/css/home.css' %}" />
+    <title>Homepage</title>
+  </head>
+  <body>
+	<center>
+        <!-- displaying django messages to user -->
+        {% for message in messages %}
+            <div class="message {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+        
+        <!-- the homepage body -->
+        <p>Hello {{ user }}</p>
+        <b>Well Done 👌</b>
+        <p>Here is your flag: <b>LoginMFABulka{C0ngr@7s_f0r_b31n9_@7_G175_🥰}</b></p>
+
+        <!-- asking user to test our file form -->
+        <p>Please, if you have time, don't forget to test our <a href="{% url 'up-file' %}">file</a> form.</p>
+
+        <!-- calling the logout form here -->
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit">Logout</button>
+        </form>
+    </center>
+    <!-- this redirect the user to login page as soon as the session timeout expire -->
+    {{ redirect_to_login_immediately }}
+  </body>
+</html>

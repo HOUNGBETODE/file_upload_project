@@ -1,0 +1,36 @@
+<!-- this is the template for login page -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'authentication/css/style.css' %}" />
+    <title>Login MFA Bulka</title>
+  </head>
+  <body>
+	<center>
+		<!-- using sweet alert to display error and success messages to user -->
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		{% if messages %}
+			{% for message in messages %}
+				<script>
+					swal("Login MFA Bulka", '{{ message }}', '{{ message.tags }}');
+				</script>
+			{% endfor %}
+		{% endif %}
+		
+		<!-- calling the login form here -->
+		<form method="POST" novalidate>
+			{% csrf_token %}
+			<h2>Login</h2>
+			{{form.as_p}}
+			<input type="submit" value="Login" />
+		</form>
+
+		<!-- indexing registration link -->
+		<p>If you do not have an account, you can register <a href="{% url 'register' %}">here</a>.</p>
+	</center>
+  </body>
+</html>

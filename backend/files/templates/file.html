@@ -1,0 +1,44 @@
+<!-- our file form template, created to test the app working -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File Form</title>
+</head>
+<body>
+  <h1>File Form</h1>
+
+  <!-- 
+        This script help us using sweet alert for nice message displaying for user
+        messages here are those announced by django
+   -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  {% if messages %}
+    {% for message in messages %}
+	  <script>
+      /*
+          swal(messageTitle, messageText, messageType)
+      */
+		  swal("Ange is saying that...", '{{ message }}', '{{ message.tags }}');
+	  </script>
+    {% endfor %}
+  {% endif %}
+
+  <!-- Defining our form here by calling form.as_p from the context -->
+  <form method="post" enctype="multipart/form-data">
+    <!-- I use crsf_token for form security -->
+    {% csrf_token %}  {{ form.as_p }}  <button type="submit">Submit</button>
+  </form>
+
+  <br>
+
+  <!-- Here, I display a list of all files (especially the name) uploaded by the current user, looking for files variable sent via context -->
+  <h2>All uploaded files</h2>
+  <ul>
+  {% for fileName in files %}
+    <li>{{ fileName }}</li>
+  {% endfor %}
+  </ul>
+</body>
+</html>
