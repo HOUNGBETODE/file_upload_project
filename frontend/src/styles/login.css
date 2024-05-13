@@ -1,0 +1,78 @@
+/* Bordered form */
+.l-body {
+  max-width: 900px;
+  margin: auto;
+  padding: auto;
+}
+
+.forml {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+.textl, .passl {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.btnl {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+.btnl:hover {
+  opacity: 0.8;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+.avatar {
+  width: 40%;
+  border-radius: 50%;
+  height: 300px;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+.s_container {
+  background-color:#f1f1f1;
+}
+
+/* The "Forgot password" text */
+span.act {
+  float: right;
+  padding-top: 16px;
+}
+
+.error, .m-error, .error * {
+  color: red;
+}
+.m-error {
+  text-align: center;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.act {
+    display: block;
+    float: none;
+  }
+}

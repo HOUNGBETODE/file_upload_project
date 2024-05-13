@@ -1,0 +1,35 @@
+/* div {
+    overflow-x:auto;
+} */
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+}
+
+.btn {
+    display: inline;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between; /* Space buttons evenly */
+  }
+  
+  .btns {
+    flex: 0 0 auto;  /* Allow forms to shrink/grow */
+    margin: 0 0px;  /* Add some margin between forms */
+  }
